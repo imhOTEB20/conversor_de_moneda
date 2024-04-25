@@ -1,3 +1,5 @@
+package com.aluralatam.convertidor_monedas.modelos;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -16,7 +18,8 @@ public class Conexion {
     }
 
     private void generateURL(String base_code) {
-        this.url = String.format(this.DIRECCION,this.key,"/latest/", base_code);
+        this.url = this.DIRECCION + this.key + "/latest/" + base_code;
+        System.out.println(this.url);
     }
 
     public String getResponse(String base_code) throws IOException, InterruptedException {
